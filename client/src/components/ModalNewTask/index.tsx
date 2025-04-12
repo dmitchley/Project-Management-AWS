@@ -1,3 +1,4 @@
+'use client'
 import Modal from "@/components/Modal";
 import { Priority, Status, useCreateTaskMutation } from "@/state/api";
 import React, { useState } from "react";
@@ -22,8 +23,10 @@ const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
   const [assignedUserId, setAssignedUserId] = useState("");
   const [projectId, setProjectId] = useState("");
 
+  console.log('this is the id ' + id)
+
   const handleSubmit = async () => {
-    if (!title || !authorUserId || !(id !== null || projectId)) return;
+    //  if (!title || !authorUserId || !(id !== null || projectId)) return;
 
     const formattedStartDate = formatISO(new Date(startDate), {
       representation: "complete",
@@ -44,6 +47,8 @@ const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
       assignedUserId: parseInt(assignedUserId),
       projectId: id !== null ? Number(id) : Number(projectId),
     });
+
+
   };
 
   // const isFormValid = () => {
@@ -67,6 +72,7 @@ const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit();
+          // window.location.reload();
         }}
       >
         <input
