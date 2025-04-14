@@ -11,6 +11,6 @@ This is a full-stack project management application built with **Next.js** on th
 - **Backend**: Express.js server running on an EC2 instance  
 - **Database**: PostgreSQL via AWS RDS  
 - **API Gateway**: Facilitates secure communication between frontend and backend  
-- **Authentication**: AWS Cognito is used for secure user authentication and session management
+ 
 
 ![Sonny and Mariel high fiving.](https://github.com/dmitchley/Project-Management-AWS/blob/main/client/public/project-managment.PNG 'High Five')
